@@ -1,0 +1,222 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8F44C944-C218-4874-A239-2D9C24284D7A}|RecommendationEngine.Communication\\RecommendationEngine.Communication.csproj|d:\\roshni backup\\learn and code\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.communication\\socketclient\\socketmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F44C944-C218-4874-A239-2D9C24284D7A}|RecommendationEngine.Communication\\RecommendationEngine.Communication.csproj|solutionrelative:recommendationengine.communication\\socketclient\\socketmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F44C944-C218-4874-A239-2D9C24284D7A}|RecommendationEngine.Communication\\RecommendationEngine.Communication.csproj|d:\\roshni backup\\learn and code\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.communication\\socketserver\\socketlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F44C944-C218-4874-A239-2D9C24284D7A}|RecommendationEngine.Communication\\RecommendationEngine.Communication.csproj|solutionrelative:recommendationengine.communication\\socketserver\\socketlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7E8D72-7820-4737-8815-748C4218840F}|RecomendationEngine.Services\\RecomendationEngine.Services.csproj|d:\\roshni backup\\learn and code\\gratuation_project_2024\\cafeteriarecommendationengine\\recomendationengine.services\\implementation\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7E8D72-7820-4737-8815-748C4218840F}|RecomendationEngine.Services\\RecomendationEngine.Services.csproj|solutionrelative:recomendationengine.services\\implementation\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7E8D72-7820-4737-8815-748C4218840F}|RecomendationEngine.Services\\RecomendationEngine.Services.csproj|d:\\roshni backup\\learn and code\\gratuation_project_2024\\cafeteriarecommendationengine\\recomendationengine.services\\implementation\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7E8D72-7820-4737-8815-748C4218840F}|RecomendationEngine.Services\\RecomendationEngine.Services.csproj|solutionrelative:recomendationengine.services\\implementation\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7E8D72-7820-4737-8815-748C4218840F}|RecomendationEngine.Services\\RecomendationEngine.Services.csproj|d:\\roshni backup\\learn and code\\gratuation_project_2024\\cafeteriarecommendationengine\\recomendationengine.services\\interfaces\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7E8D72-7820-4737-8815-748C4218840F}|RecomendationEngine.Services\\RecomendationEngine.Services.csproj|solutionrelative:recomendationengine.services\\interfaces\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1812FDC-C227-43D3-AEA8-3C66B8657F03}|CafeteriaRecommendationEngine\\RecommendationEngine.Server.csproj|d:\\roshni backup\\learn and code\\gratuation_project_2024\\cafeteriarecommendationengine\\cafeteriarecommendationengine\\extensions\\serviceextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1812FDC-C227-43D3-AEA8-3C66B8657F03}|CafeteriaRecommendationEngine\\RecommendationEngine.Server.csproj|solutionrelative:cafeteriarecommendationengine\\extensions\\serviceextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40C91484-C877-4D35-9FD5-58CF3D3FA6C3}|RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj|d:\\roshni backup\\learn and code\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.dal\\repositories\\implementation\\itemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40C91484-C877-4D35-9FD5-58CF3D3FA6C3}|RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj|solutionrelative:recommendationengine.dal\\repositories\\implementation\\itemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40C91484-C877-4D35-9FD5-58CF3D3FA6C3}|RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj|d:\\roshni backup\\learn and code\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.dal\\repositories\\interfaces\\iitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40C91484-C877-4D35-9FD5-58CF3D3FA6C3}|RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj|solutionrelative:recommendationengine.dal\\repositories\\interfaces\\iitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40C91484-C877-4D35-9FD5-58CF3D3FA6C3}|RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj|d:\\roshni backup\\learn and code\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.dal\\dbconnection\\recommendationenginecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40C91484-C877-4D35-9FD5-58CF3D3FA6C3}|RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj|solutionrelative:recommendationengine.dal\\dbconnection\\recommendationenginecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|d:\\roshni backup\\learn and code\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.datamodel\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|solutionrelative:recommendationengine.datamodel\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|d:\\roshni backup\\learn and code\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.datamodel\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|solutionrelative:recommendationengine.datamodel\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|d:\\roshni backup\\learn and code\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.datamodel\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|solutionrelative:recommendationengine.datamodel\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SocketMessenger.cs",
+              "DocumentMoniker": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Communication\\SocketClient\\SocketMessenger.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.Communication\\SocketClient\\SocketMessenger.cs",
+              "ToolTip": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Communication\\SocketClient\\SocketMessenger.cs",
+              "RelativeToolTip": "RecommendationEngine.Communication\\SocketClient\\SocketMessenger.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAuwG0AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T19:45:26.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SocketListener.cs",
+              "DocumentMoniker": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Communication\\SocketServer\\SocketListener.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.Communication\\SocketServer\\SocketListener.cs",
+              "ToolTip": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Communication\\SocketServer\\SocketListener.cs",
+              "RelativeToolTip": "RecommendationEngine.Communication\\SocketServer\\SocketListener.cs",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAjwIEAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T12:34:26.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IAdminService.cs",
+              "DocumentMoniker": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\Interfaces\\IAdminService.cs",
+              "RelativeDocumentMoniker": "RecomendationEngine.Services\\Interfaces\\IAdminService.cs",
+              "ToolTip": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\Interfaces\\IAdminService.cs",
+              "RelativeToolTip": "RecomendationEngine.Services\\Interfaces\\IAdminService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T16:22:43.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Item.cs",
+              "DocumentMoniker": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\Item.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.DataModel\\Models\\Item.cs",
+              "ToolTip": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\Item.cs",
+              "RelativeToolTip": "RecommendationEngine.DataModel\\Models\\Item.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T16:16:46.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\Implementation\\AuthService.cs",
+              "RelativeDocumentMoniker": "RecomendationEngine.Services\\Implementation\\AuthService.cs",
+              "ToolTip": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\Implementation\\AuthService.cs",
+              "RelativeToolTip": "RecomendationEngine.Services\\Implementation\\AuthService.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAACoAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T13:49:08.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServiceExtension.cs",
+              "DocumentMoniker": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\CafeteriaRecommendationEngine\\Extensions\\ServiceExtension.cs",
+              "RelativeDocumentMoniker": "CafeteriaRecommendationEngine\\Extensions\\ServiceExtension.cs",
+              "ToolTip": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\CafeteriaRecommendationEngine\\Extensions\\ServiceExtension.cs",
+              "RelativeToolTip": "CafeteriaRecommendationEngine\\Extensions\\ServiceExtension.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T16:30:10.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\Implementation\\AdminService.cs",
+              "RelativeDocumentMoniker": "RecomendationEngine.Services\\Implementation\\AdminService.cs",
+              "ToolTip": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\Implementation\\AdminService.cs",
+              "RelativeToolTip": "RecomendationEngine.Services\\Implementation\\AdminService.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAQwCMAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T16:22:55.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ItemRepository.cs",
+              "DocumentMoniker": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\Repositories\\Implementation\\ItemRepository.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.DAL\\Repositories\\Implementation\\ItemRepository.cs",
+              "ToolTip": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\Repositories\\Implementation\\ItemRepository.cs",
+              "RelativeToolTip": "RecommendationEngine.DAL\\Repositories\\Implementation\\ItemRepository.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAB4AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T19:07:33.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RecommendationEngineContext.cs",
+              "DocumentMoniker": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\DbConnection\\RecommendationEngineContext.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.DAL\\DbConnection\\RecommendationEngineContext.cs",
+              "ToolTip": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\DbConnection\\RecommendationEngineContext.cs",
+              "RelativeToolTip": "RecommendationEngine.DAL\\DbConnection\\RecommendationEngineContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T16:24:33.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IItemRepository.cs",
+              "DocumentMoniker": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\Repositories\\Interfaces\\IItemRepository.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.DAL\\Repositories\\Interfaces\\IItemRepository.cs",
+              "ToolTip": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\Repositories\\Interfaces\\IItemRepository.cs",
+              "RelativeToolTip": "RecommendationEngine.DAL\\Repositories\\Interfaces\\IItemRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T19:07:55.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\User.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.DataModel\\Models\\User.cs",
+              "ToolTip": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\User.cs",
+              "RelativeToolTip": "RecommendationEngine.DataModel\\Models\\User.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAAB0AAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T13:50:10.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Role.cs",
+              "DocumentMoniker": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\Role.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.DataModel\\Models\\Role.cs",
+              "ToolTip": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\Role.cs",
+              "RelativeToolTip": "RecommendationEngine.DataModel\\Models\\Role.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T12:47:19.949Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
