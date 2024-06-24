@@ -2813,11 +2813,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\RecomendationEngine.Services.csproj",
+      "projectUniqueName": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\RecomendationEngine.Services.csproj",
       "projectName": "RecomendationEngine.Services",
-      "projectPath": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\RecomendationEngine.Services.csproj",
+      "projectPath": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\RecomendationEngine.Services.csproj",
       "packagesPath": "C:\\Users\\roshni.mehta\\.nuget\\packages\\",
-      "outputPath": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\obj\\",
+      "outputPath": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2839,14 +2839,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Common\\RecommendationEngine.Common.csproj": {
-              "projectPath": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Common\\RecommendationEngine.Common.csproj"
+            "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Common\\RecommendationEngine.Common.csproj": {
+              "projectPath": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Common\\RecommendationEngine.Common.csproj"
             },
-            "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj": {
-              "projectPath": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj"
+            "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj": {
+              "projectPath": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj"
             },
-            "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj": {
-              "projectPath": "D:\\Roshni backup\\learn and code\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj"
+            "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj": {
+              "projectPath": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj"
             }
           }
         }

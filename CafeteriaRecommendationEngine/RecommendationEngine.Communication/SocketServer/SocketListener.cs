@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleTableExt;
 using Microsoft.Extensions.DependencyInjection;
 using RecomendationEngine.Services.Interfaces;
 using RecommendationEngine.DataModel.Models;
@@ -14,11 +15,13 @@ namespace RecommendationEngine.Communication.SocketServer
     public class SocketListener
     {
         private static ConcurrentDictionary<string, (Socket, User)> activeSessions = new ConcurrentDictionary<string, (Socket, User)>();
+        private static IAuthService authService;
+        private static IAdminService adminService;
 
         public static async Task StartServer(IServiceProvider services)
         {
-            var ipAddress = IPAddress.Parse("172.20.10.14");
-            var localEndPoint = new IPEndPoint(ipAddress, 1111);
+            var ipAddress = IPAddress.Parse("172.16.2.4");
+            var localEndPoint = new IPEndPoint(ipAddress, 9999);
 
             var listener = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
@@ -37,15 +40,22 @@ namespace RecommendationEngine.Communication.SocketServer
                         try
                         {
                             var buffer = new byte[1024];
-                            var bytesReceived = await handler.ReceiveAsync(buffer, SocketFlags.None);
-                            var data = Encoding.ASCII.GetString(buffer, 0, bytesReceived);
-
-                            using (var scope = services.CreateScope())
+                            while (true)
                             {
-                                var authService = scope.ServiceProvider.GetRequiredService<IAuthService>();
-                                var response = await ProcessData(data, authService, handler, scope);
-                                var msg = Encoding.ASCII.GetBytes(response);
-                                await handler.SendAsync(msg, SocketFlags.None);
+                                var bytesReceived = await handler.ReceiveAsync(buffer, SocketFlags.None);
+                                if (bytesReceived == 0)
+                                    break;
+
+                                var data = Encoding.ASCII.GetString(buffer, 0, bytesReceived);
+
+                                using (var scope = services.CreateScope())
+                                {
+                                    InitializeServices(scope.ServiceProvider);
+
+                                    var response = await ProcessData(data, handler);
+                                    var msg = Encoding.ASCII.GetBytes(response);
+                                    await handler.SendAsync(msg, SocketFlags.None);
+                                }
                             }
                         }
                         catch (Exception ex)
@@ -66,7 +76,13 @@ namespace RecommendationEngine.Communication.SocketServer
             }
         }
 
-        private static async Task<string> ProcessData(string data, IAuthService authService, Socket handler, IServiceScope scope)
+        private static void InitializeServices(IServiceProvider serviceProvider)
+        {
+            authService = serviceProvider.GetRequiredService<IAuthService>();
+            adminService = serviceProvider.GetRequiredService<IAdminService>();
+        }
+
+        private static async Task<string> ProcessData(string data, Socket handler)
         {
             try
             {
@@ -91,15 +107,7 @@ namespace RecommendationEngine.Communication.SocketServer
 
                     activeSessions.TryAdd(username, (handler, user));
 
-                    var response = $"Login successful; Role: {user.Role.RoleName}\n";
-                    response += user.Role.RoleName.ToLower() switch
-                    {
-                        "admin" => "Options:\n1. Add Item\n2. Update Item\n3. Delete Item\n4. View Items\n5. Logout",
-                        "chef" => "Options:\n1. Rollout Menu\n2. Logout",
-                        "employee" => "Options:\n1. Give Feedback\n2. View Menu\n3. Logout",
-                        _ => "Unknown role"
-                    };
-
+                    var response = $"Login successful; Role: {user.Role.RoleName}";
                     return response;
                 }
 
@@ -122,13 +130,17 @@ namespace RecommendationEngine.Communication.SocketServer
 
                     Console.WriteLine($"Processing command '{command}' for user '{username}' with role '{user.Role.RoleName}'");
 
-                    return user.Role.RoleName.ToLower() switch
+                    switch (user.Role.RoleName.ToLower())
                     {
-                        "admin" => await HandleAdminCommands(parts.Skip(2).ToArray(), scope),
-                        "chef" => await HandleChefCommands("", scope),
-                        "employee" => await HandleEmployeeCommands("", scope),
-                        _ => "Unknown role"
-                    };
+                        case "admin":
+                            return await HandleAdminCommands(command, parts);
+                        case "chef":
+                            return await HandleChefCommands(command);
+                        case "employee":
+                            return await HandleEmployeeCommands(command);
+                        default:
+                            return "Unknown role";
+                    }
                 }
 
                 return "Unknown command";
@@ -140,85 +152,115 @@ namespace RecommendationEngine.Communication.SocketServer
             }
         }
 
-        private static async Task<string> HandleAdminCommands(string[] commandParts, IServiceScope scope)
+        private static async Task<string> HandleAdminCommands(string command, string[] parts)
         {
-            var command = commandParts[0];
-            var adminService = scope.ServiceProvider.GetRequiredService<IAdminService>();
+            switch (command)
+            {
+                case "1": // Add Item
+                    if (parts.Length < 6)
+                    {
+                        return "Invalid command format for Add Item. Expected: 1;username;itemName;itemPrice;itemStatus;mealTypeId";
+                    }
 
-            try
-            {
-                switch (command)
-                {
-                    case "1":
-                        Console.WriteLine("Enter item name:");
-                        var itemName = Console.ReadLine();
-                        Console.WriteLine("Enter price:");
-                        var price = decimal.Parse(Console.ReadLine());
-                        Console.WriteLine("Enter availability status:");
-                        var status = Console.ReadLine();
-                        await adminService.AddItem(itemName, price, status);
-                        return "Item added successfully.";
-                    case "2":
-                        Console.WriteLine("Enter item ID:");
-                        var itemId = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Enter item name:");
-                        itemName = Console.ReadLine();
-                        Console.WriteLine("Enter price:");
-                        price = decimal.Parse(Console.ReadLine());
-                        Console.WriteLine("Enter availability status:");
-                        status = Console.ReadLine();
-                        await adminService.UpdateItem(itemId, itemName, price, status);
-                        return "Item updated successfully.";
-                    case "3":
-                        Console.WriteLine("Enter item ID:");
-                        itemId = int.Parse(Console.ReadLine());
-                        await adminService.DeleteItem(itemId);
-                        return "Item deleted successfully.";
-                    case "4":
-                        var items = await adminService.GetItems();
-                        var itemsList = string.Join("\n", items.Select(i => $"ID: {i.ItemId}, Name: {i.ItemName}, Price: {i.Price}, Status: {i.AvailabilityStatus}"));
-                        return $"Items:\n{itemsList}";
-                    default:
-                        return "Invalid command for admin.";
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error handling admin command '{command}': {ex.Message}");
-                return $"Error handling admin command '{command}': {ex.Message}";
+                    string itemName = parts[2];
+                    if (!decimal.TryParse(parts[3], out decimal itemPrice))
+                    {
+                        return "Invalid item price";
+                    }
+                    string itemStatus = parts[4];
+                    if (!int.TryParse(parts[5], out int mealTypeId))
+                    {
+                        return "Invalid mealType ID";
+                    }
+
+                    await adminService.AddItem(itemName, itemPrice, itemStatus, mealTypeId);
+                    return "Add Item selected";
+
+                case "2": // Update Item
+                    if (parts.Length < 5)
+                    {
+                        return "Invalid command format for Update Item. Expected: 2;itemId;itemPrice;itemStatus";
+                    }
+
+                    if (!int.TryParse(parts[2], out int updateItemId))
+                    {
+                        return "Invalid item ID";
+                    }
+                    if (!decimal.TryParse(parts[3], out decimal updateItemPrice))
+                    {
+                        return "Invalid item price";
+                    }
+                    string updateItemStatus = parts[4];
+
+                    await adminService.UpdateItem(updateItemId, updateItemPrice, updateItemStatus);
+                    return "Update Item selected";
+
+                case "3": // Delete Item
+                    if (parts.Length < 2)
+                    {
+                        return "Invalid command format for Delete Item. Expected: 3;itemId";
+                    }
+
+                    if (!int.TryParse(parts[2], out int deleteItemId))
+                    {
+                        return "Invalid item ID";
+                    }
+
+                    await adminService.DeleteItem(deleteItemId);
+                    return "Delete Item selected";
+
+                case "4": // View Items
+                    var items = await adminService.GetItems();
+                    if (items == null || items.Count == 0)
+                    {
+                        return "No items found";
+                    }
+
+                    var tableData = items.Select(item => new
+                    {
+                        ID = item.ItemId,
+                        Name = item.ItemName,
+                        Price = item.Price,
+                        Status = item.AvailabilityStatus,
+                        MealTypeID = item.MealTypeId
+                    }).ToList();
+
+                    var tableString = ConsoleTableBuilder
+                        .From(tableData)
+                        .WithFormat(ConsoleTableBuilderFormat.MarkDown)
+                        .Export()
+                        .ToString();
+
+                    return tableString;
+
+                default:
+                    return "Invalid command for admin.";
             }
         }
 
 
-        private static async Task<string> HandleChefCommands(string command, IServiceScope scope)
+        private static async Task<string> HandleChefCommands(string command)
         {
-            // Implement chef-specific commands
             switch (command)
             {
                 case "1": // Rollout Menu
-                    return "Menu rolled out successfully";
-                case "2": // Logout
-                    return "logout";
+                    return "Rollout Menu selected";
                 default:
                     return "Unknown chef command";
             }
         }
 
-        private static async Task<string> HandleEmployeeCommands(string command, IServiceScope scope)
+        private static async Task<string> HandleEmployeeCommands(string command)
         {
-            // Implement employee-specific commands
             switch (command)
             {
                 case "1": // Give Feedback
-                    return "Feedback submitted successfully";
+                    return "Give Feedback selected";
                 case "2": // View Menu
-                    return "Menu viewed successfully";
-                case "3": // Logout
-                    return "logout";
+                    return "View Menu selected";
                 default:
                     return "Unknown employee command";
             }
         }
-
     }
 }

@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ConsoleTableExt" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\RecomendationEngine.Services\RecomendationEngine.Services.csproj" />
     <ProjectReference Include="..\RecommendationEngine.DataModel\RecommendationEngine.DataModel.csproj" />
   </ItemGroup>

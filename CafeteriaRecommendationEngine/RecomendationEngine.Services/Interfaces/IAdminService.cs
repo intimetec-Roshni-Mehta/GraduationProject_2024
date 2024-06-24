@@ -9,8 +9,8 @@ namespace RecomendationEngine.Services.Interfaces
 {
     public interface IAdminService
     {
-        Task AddItem(string itemName, decimal price, string availabilityStatus);
-        Task UpdateItem(int itemId, string itemName, decimal price, string availabilityStatus);
+        Task AddItem(string itemName, decimal price, string availabilityStatus, int mealTypeId);
+        Task UpdateItem(int itemId, decimal price, string availabilityStatus);
         Task DeleteItem(int itemId);
         Task<List<Item>> GetItems();
     }

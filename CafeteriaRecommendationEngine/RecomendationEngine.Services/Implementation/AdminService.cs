@@ -20,18 +20,17 @@ namespace RecomendationEngine.Services.Implementation
             _itemRepository = itemRepository;
         }
 
-        public async Task AddItem(string itemName, decimal price, string availabilityStatus)
+        public async Task AddItem(string itemName, decimal price, string availabilityStatus, int mealTypeId)
         {
-            var item = new Item { ItemName = itemName, Price = price, AvailabilityStatus = availabilityStatus };
+            var item = new Item { ItemName = itemName, Price = price, AvailabilityStatus = availabilityStatus, MealTypeId = mealTypeId };
             await _itemRepository.AddAsync(item);
         }
 
-        public async Task UpdateItem(int itemId, string itemName,decimal price, string availabilityStatus)
+        public async Task UpdateItem(int itemId, decimal price, string availabilityStatus)
         {
             var item = await _itemRepository.GetByIdAsync(itemId);
             if (item != null)
             {
-                item.ItemName = itemName;
                 item.Price = price;
                 item.AvailabilityStatus = availabilityStatus;
                 await _itemRepository.UpdateAsync(item);
