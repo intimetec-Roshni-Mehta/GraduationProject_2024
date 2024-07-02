@@ -75,7 +75,7 @@ namespace RecommendationEngine.Communication.SocketClient
         {
             try
             {
-                byte[] bytes = new byte[1024];
+                byte[] bytes = new byte[2048];
                 int bytesRec = sender.Receive(bytes);
                 var response = Encoding.ASCII.GetString(bytes, 0, bytesRec);
 
@@ -95,10 +95,10 @@ namespace RecommendationEngine.Communication.SocketClient
             {
                 case "Login successful; Role: Admin":
                     Console.WriteLine("Options:\n1. Add Item\n2. Update Item\n3. Delete Item\n4. View Items\n");
-                    ProcessAdminOptions(sender, username, "Admin");
+                    ProcessAdminOptions(sender, username);
                     break;
                 case "Login successful; Role: Chef":
-                    Console.WriteLine("Options:\n1. Rollout Menu\n");
+                    Console.WriteLine("Options:\n1. Rollout Menu\n2. Get RollOut Menu");
                     ProcessChefOptions(sender, username);
                     break;
                 case "Login successful; Role: Employee":
@@ -111,36 +111,55 @@ namespace RecommendationEngine.Communication.SocketClient
             }
         }
 
-        private static void ProcessAdminOptions(Socket sender, string username, string option)
+        private static void ProcessAdminOptions(Socket sender, string username)
         {
-            switch (option)
+            bool loggedIn = true;
+            while (loggedIn)
             {
-                case "1":
+                Console.Write("Enter option (or 'logout' to exit): ");
+                var option = Console.ReadLine();
+
+                if (option.ToLower() == "logout")
+                {
+                    SendMessage(sender, $"logout;{username};");
+                    loggedIn = false;
+                }
+                else if (option == "1")// && response.Contains("Add Item"))
+                {
                     string itemName = PromptUser("Enter item name: ");
                     string itemPrice = PromptUser("Enter item price: ");
                     string itemStatus = PromptUser("Enter item status: ");
                     string mealTypeId = PromptUser("Enter meal type ID: ");
 
                     SendMessage(sender, $"{option};{username};{itemName};{itemPrice};{itemStatus};{mealTypeId}");
-                    break;
-                case "2":
-                    string itemIdToUpdate = PromptUser("Enter item id to update: ");
-                    string newItemPrice = PromptUser("Enter new item price: ");
-                    string newItemStatus = PromptUser("Enter new item status: ");
+                    ReceiveServerResponse(sender);
+                }
+                else if (option == "2")// && response.Contains("Update Item"))
+                {
+                    string itemId = PromptUser("Enter item id to update: ");
+                    string itemPrice = PromptUser("Enter new item price: ");
+                    string itemStatus = PromptUser("Enter new item status: ");
 
-                    SendMessage(sender, $"{option};{username};{itemIdToUpdate};{newItemPrice};{newItemStatus}");
-                    break;
-                case "3":
-                    string itemIdToDelete = PromptUser("Enter item ID to delete: ");
+                    SendMessage(sender, $"{option};{username};{itemId};{itemPrice};{itemStatus}");
+                    ReceiveServerResponse(sender);
+                }
+                else if (option == "3")// && response.Contains("Delete Item"))
+                {
+                    string itemId = PromptUser("Enter item ID to delete: ");
 
-                    SendMessage(sender, $"{option};{username};{itemIdToDelete}");
-                    break;
-                case "4":
+                    SendMessage(sender, $"{option};{username};{itemId}");
+                    ReceiveServerResponse(sender);
+                }
+                else if (option == "4" )//&& response.Contains("View All Items"))
+                {
                     SendMessage(sender, $"{option};{username};");
-                    break;
-                default:
+                    ReceiveServerResponse(sender);
+                }
+                else
+                {
                     SendMessage(sender, $"{option};{username};");
-                    break;
+                    ReceiveServerResponse(sender);
+                }
             }
         }
 
@@ -157,6 +176,34 @@ namespace RecommendationEngine.Communication.SocketClient
                     SendMessage(sender, $"logout;{username};");
                     loggedIn = false;
                 }
+                else if (option == "1")
+                {
+                    SendMessage(sender, $"getItems;{username};");
+                    var itemsListResponse = ReceiveServerResponse(sender);
+                    Console.WriteLine(itemsListResponse);
+
+                    Console.WriteLine("Rolling out menu for " + DateTime.Now.AddDays(2).ToString("yyyy-MM-dd"));
+                    string itemIdsInput = PromptUser("Enter item IDs separated by commas: ");
+                    List<int> itemIds = new List<int>();
+                    while (!TryParseItemIds(itemIdsInput, out itemIds))
+                    {
+                        Console.WriteLine("Invalid item IDs format. Please enter integers separated by commas.");
+                        itemIdsInput = PromptUser("Enter item IDs separated by commas: ");
+                    }
+
+                    string formattedDate = DateTime.Now.AddDays(2).ToString("yyyy-MM-dd");
+                    string formattedItemIds = string.Join(",", itemIds);
+
+                    SendMessage(sender, $"{option};{username};{formattedDate};{formattedItemIds}");
+                    var rolloutResponse = ReceiveServerResponse(sender);
+                    Console.WriteLine(rolloutResponse);
+                }
+                else if (option == "2")
+                {
+                    SendMessage(sender, $"{option};{username};");
+                    var rolledOutMenuResponse = ReceiveServerResponse(sender);
+                    Console.WriteLine(rolledOutMenuResponse);
+                }
                 else
                 {
                     SendMessage(sender, $"{option};{username};");
@@ -164,6 +211,27 @@ namespace RecommendationEngine.Communication.SocketClient
                 }
             }
         }
+
+        private static bool TryParseItemIds(string input, out List<int> itemIds)
+        {
+            itemIds = new List<int>();
+            var parts = input.Split(',');
+            foreach (var part in parts)
+            {
+                if (int.TryParse(part.Trim(), out int id))
+                {
+                    itemIds.Add(id);
+                }
+                else
+                {
+                    itemIds = null;
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
 
         private static void ProcessEmployeeOptions(Socket sender, string username)
         {
@@ -186,7 +254,7 @@ namespace RecommendationEngine.Communication.SocketClient
             }
         }
 
-        private static void ReceiveServerResponse(Socket sender)
+        private static string ReceiveServerResponse(Socket sender)
         {
             try
             {
@@ -194,11 +262,12 @@ namespace RecommendationEngine.Communication.SocketClient
                 int bytesRec = sender.Receive(bytes);
                 var response = Encoding.ASCII.GetString(bytes, 0, bytesRec);
 
-                Console.WriteLine("Server response =\n{0}", response);
+                return response;
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error receiving response: {ex.Message}");
+                return string.Empty;
             }
         }
     }

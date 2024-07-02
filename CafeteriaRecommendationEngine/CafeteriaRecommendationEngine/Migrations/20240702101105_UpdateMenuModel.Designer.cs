@@ -12,8 +12,8 @@ using RecommendationEngine.DAL.DbConnection;
 namespace RecommendationEngine.Server.Migrations
 {
     [DbContext(typeof(RecommendationEngineContext))]
-    [Migration("20240620103337_RecommendationEngine_1.0")]
-    partial class RecommendationEngine_10
+    [Migration("20240702101105_UpdateMenuModel")]
+    partial class UpdateMenuModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -79,14 +79,9 @@ namespace RecommendationEngine.Server.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("ItemId");
 
                     b.HasIndex("MealTypeId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Item");
                 });
@@ -106,6 +101,46 @@ namespace RecommendationEngine.Server.Migrations
                     b.HasKey("MealTypeId");
 
                     b.ToTable("MealType");
+                });
+
+            modelBuilder.Entity("RecommendationEngine.DataModel.Models.Menu", b =>
+                {
+                    b.Property<int>("MenuId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MenuId"), 1L, 1);
+
+                    b.Property<string>("Date")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MenuId");
+
+                    b.ToTable("Menu");
+                });
+
+            modelBuilder.Entity("RecommendationEngine.DataModel.Models.MenuItem", b =>
+                {
+                    b.Property<int>("MenuItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MenuItemId"), 1L, 1);
+
+                    b.Property<int>("ItemId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MenuId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MenuItemId");
+
+                    b.HasIndex("ItemId");
+
+                    b.HasIndex("MenuId");
+
+                    b.ToTable("MenuItem");
                 });
 
             modelBuilder.Entity("RecommendationEngine.DataModel.Models.Notification", b =>
@@ -254,11 +289,26 @@ namespace RecommendationEngine.Server.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("RecommendationEngine.DataModel.Models.User", null)
-                        .WithMany("SelectedItems")
-                        .HasForeignKey("UserId");
-
                     b.Navigation("MealType");
+                });
+
+            modelBuilder.Entity("RecommendationEngine.DataModel.Models.MenuItem", b =>
+                {
+                    b.HasOne("RecommendationEngine.DataModel.Models.Item", "Item")
+                        .WithMany()
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RecommendationEngine.DataModel.Models.Menu", "Menu")
+                        .WithMany("MenuItems")
+                        .HasForeignKey("MenuId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Item");
+
+                    b.Navigation("Menu");
                 });
 
             modelBuilder.Entity("RecommendationEngine.DataModel.Models.Notification", b =>
@@ -325,6 +375,11 @@ namespace RecommendationEngine.Server.Migrations
                     b.Navigation("Item");
                 });
 
+            modelBuilder.Entity("RecommendationEngine.DataModel.Models.Menu", b =>
+                {
+                    b.Navigation("MenuItems");
+                });
+
             modelBuilder.Entity("RecommendationEngine.DataModel.Models.Role", b =>
                 {
                     b.Navigation("User");
@@ -335,8 +390,6 @@ namespace RecommendationEngine.Server.Migrations
                     b.Navigation("Feedback");
 
                     b.Navigation("Notification");
-
-                    b.Navigation("SelectedItems");
 
                     b.Navigation("VotedItem");
                 });

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RecommendationEngine.Server.Migrations
 {
-    public partial class RecommendationEngine_10 : Migration
+    public partial class RecoomendationEngine1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -23,6 +23,19 @@ namespace RecommendationEngine.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Menu",
+                columns: table => new
+                {
+                    MenuId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Date = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Menu", x => x.MenuId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Role",
                 columns: table => new
                 {
@@ -33,6 +46,28 @@ namespace RecommendationEngine.Server.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Role", x => x.RoleId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Item",
+                columns: table => new
+                {
+                    ItemId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ItemName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    AvailabilityStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MealTypeId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Item", x => x.ItemId);
+                    table.ForeignKey(
+                        name: "FK_Item_MealType_MealTypeId",
+                        column: x => x.MealTypeId,
+                        principalTable: "MealType",
+                        principalColumn: "MealTypeId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -57,52 +92,48 @@ namespace RecommendationEngine.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Item",
+                name: "MenuItem",
                 columns: table => new
                 {
-                    ItemId = table.Column<int>(type: "int", nullable: false)
+                    MenuItemId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ItemName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    AvailabilityStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MealTypeId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: true)
+                    MenuId = table.Column<int>(type: "int", nullable: false),
+                    ItemId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Item", x => x.ItemId);
+                    table.PrimaryKey("PK_MenuItem", x => x.MenuItemId);
                     table.ForeignKey(
-                        name: "FK_Item_MealType_MealTypeId",
-                        column: x => x.MealTypeId,
-                        principalTable: "MealType",
-                        principalColumn: "MealTypeId",
+                        name: "FK_MenuItem_Item_ItemId",
+                        column: x => x.ItemId,
+                        principalTable: "Item",
+                        principalColumn: "ItemId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Item_User_UserId",
-                        column: x => x.UserId,
-                        principalTable: "User",
-                        principalColumn: "UserId");
+                        name: "FK_MenuItem_Menu_MenuId",
+                        column: x => x.MenuId,
+                        principalTable: "Menu",
+                        principalColumn: "MenuId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Notification",
+                name: "Recommendation",
                 columns: table => new
                 {
-                    NotificationId = table.Column<int>(type: "int", nullable: false)
+                    RecommendationId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NotificationType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Message = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    ItemId = table.Column<int>(type: "int", nullable: false),
+                    RecommendedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Notification", x => x.NotificationId);
+                    table.PrimaryKey("PK_Recommendation", x => x.RecommendationId);
                     table.ForeignKey(
-                        name: "FK_Notification_User_UserId",
-                        column: x => x.UserId,
-                        principalTable: "User",
-                        principalColumn: "UserId",
+                        name: "FK_Recommendation_Item_ItemId",
+                        column: x => x.ItemId,
+                        principalTable: "Item",
+                        principalColumn: "ItemId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -136,22 +167,24 @@ namespace RecommendationEngine.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Recommendation",
+                name: "Notification",
                 columns: table => new
                 {
-                    RecommendationId = table.Column<int>(type: "int", nullable: false)
+                    NotificationId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ItemId = table.Column<int>(type: "int", nullable: false),
-                    RecommendedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    NotificationType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Recommendation", x => x.RecommendationId);
+                    table.PrimaryKey("PK_Notification", x => x.NotificationId);
                     table.ForeignKey(
-                        name: "FK_Recommendation_Item_ItemId",
-                        column: x => x.ItemId,
-                        principalTable: "Item",
-                        principalColumn: "ItemId",
+                        name: "FK_Notification_User_UserId",
+                        column: x => x.UserId,
+                        principalTable: "User",
+                        principalColumn: "UserId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -198,9 +231,14 @@ namespace RecommendationEngine.Server.Migrations
                 column: "MealTypeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Item_UserId",
-                table: "Item",
-                column: "UserId");
+                name: "IX_MenuItem_ItemId",
+                table: "MenuItem",
+                column: "ItemId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MenuItem_MenuId",
+                table: "MenuItem",
+                column: "MenuId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Notification_UserId",
@@ -234,6 +272,9 @@ namespace RecommendationEngine.Server.Migrations
                 name: "Feedback");
 
             migrationBuilder.DropTable(
+                name: "MenuItem");
+
+            migrationBuilder.DropTable(
                 name: "Notification");
 
             migrationBuilder.DropTable(
@@ -243,13 +284,16 @@ namespace RecommendationEngine.Server.Migrations
                 name: "VotedItem");
 
             migrationBuilder.DropTable(
+                name: "Menu");
+
+            migrationBuilder.DropTable(
                 name: "Item");
 
             migrationBuilder.DropTable(
-                name: "MealType");
+                name: "User");
 
             migrationBuilder.DropTable(
-                name: "User");
+                name: "MealType");
 
             migrationBuilder.DropTable(
                 name: "Role");

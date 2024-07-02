@@ -23,6 +23,8 @@ namespace RecommendationEngine.DAL.DbConnection
         public DbSet<Notification> Notification { get; set; }
         public DbSet<MealType> MealType { get; set; }
         public DbSet<VotedItem> VotedItem { get; set; }
+        public DbSet<Menu> Menu { get; set; }
+        public DbSet<MenuItem> MenuItem { get; set; }
 
     }
 }

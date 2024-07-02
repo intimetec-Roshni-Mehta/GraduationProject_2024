@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.datamodel\\models\\mealtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|solutionrelative:recommendationengine.datamodel\\models\\mealtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7E8D72-7820-4737-8815-748C4218840F}|RecomendationEngine.Services\\RecomendationEngine.Services.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\recomendationengine.services\\implementation\\chefservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7E8D72-7820-4737-8815-748C4218840F}|RecomendationEngine.Services\\RecomendationEngine.Services.csproj|solutionrelative:recomendationengine.services\\implementation\\chefservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.datamodel\\models\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|solutionrelative:recommendationengine.datamodel\\models\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7E8D72-7820-4737-8815-748C4218840F}|RecomendationEngine.Services\\RecomendationEngine.Services.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\recomendationengine.services\\interfaces\\ichefservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7E8D72-7820-4737-8815-748C4218840F}|RecomendationEngine.Services\\RecomendationEngine.Services.csproj|solutionrelative:recomendationengine.services\\interfaces\\ichefservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8F44C944-C218-4874-A239-2D9C24284D7A}|RecommendationEngine.Communication\\RecommendationEngine.Communication.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.communication\\socketserver\\socketlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F44C944-C218-4874-A239-2D9C24284D7A}|RecommendationEngine.Communication\\RecommendationEngine.Communication.csproj|solutionrelative:recommendationengine.communication\\socketserver\\socketlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,32 +27,12 @@
       "RelativeMoniker": "D:0:0:{8F44C944-C218-4874-A239-2D9C24284D7A}|RecommendationEngine.Communication\\RecommendationEngine.Communication.csproj|solutionrelative:recommendationengine.communication\\socketclient\\socketmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B7E8D72-7820-4737-8815-748C4218840F}|RecomendationEngine.Services\\RecomendationEngine.Services.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\recomendationengine.services\\interfaces\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B7E8D72-7820-4737-8815-748C4218840F}|RecomendationEngine.Services\\RecomendationEngine.Services.csproj|solutionrelative:recomendationengine.services\\interfaces\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{40C91484-C877-4D35-9FD5-58CF3D3FA6C3}|RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.dal\\repositories\\interfaces\\imenurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40C91484-C877-4D35-9FD5-58CF3D3FA6C3}|RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj|solutionrelative:recommendationengine.dal\\repositories\\interfaces\\imenurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1812FDC-C227-43D3-AEA8-3C66B8657F03}|CafeteriaRecommendationEngine\\RecommendationEngine.Server.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\cafeteriarecommendationengine\\extensions\\serviceextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1812FDC-C227-43D3-AEA8-3C66B8657F03}|CafeteriaRecommendationEngine\\RecommendationEngine.Server.csproj|solutionrelative:cafeteriarecommendationengine\\extensions\\serviceextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.datamodel\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|solutionrelative:recommendationengine.datamodel\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1812FDC-C227-43D3-AEA8-3C66B8657F03}|CafeteriaRecommendationEngine\\RecommendationEngine.Server.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\cafeteriarecommendationengine\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1812FDC-C227-43D3-AEA8-3C66B8657F03}|CafeteriaRecommendationEngine\\RecommendationEngine.Server.csproj|solutionrelative:cafeteriarecommendationengine\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40C91484-C877-4D35-9FD5-58CF3D3FA6C3}|RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.dal\\repositories\\interfaces\\iitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40C91484-C877-4D35-9FD5-58CF3D3FA6C3}|RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj|solutionrelative:recommendationengine.dal\\repositories\\interfaces\\iitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.datamodel\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|solutionrelative:recommendationengine.datamodel\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.datamodel\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E1095BA-5C59-49F9-B220-968C42339543}|RecommendationEngine.DataModel\\RecommendationEngine.DataModel.csproj|solutionrelative:recommendationengine.datamodel\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{40C91484-C877-4D35-9FD5-58CF3D3FA6C3}|RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj|c:\\users\\roshni.mehta\\onedrive - intimetec visionsoft pvt. ltd.,\\desktop\\gratuation_project_2024\\cafeteriarecommendationengine\\recommendationengine.dal\\repositories\\implementation\\menurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40C91484-C877-4D35-9FD5-58CF3D3FA6C3}|RecommendationEngine.DAL\\RecommendationEngine.DAL.csproj|solutionrelative:recommendationengine.dal\\repositories\\implementation\\menurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,123 +42,110 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SocketMessenger.cs",
-              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Communication\\SocketClient\\SocketMessenger.cs",
-              "RelativeDocumentMoniker": "RecommendationEngine.Communication\\SocketClient\\SocketMessenger.cs",
-              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Communication\\SocketClient\\SocketMessenger.cs",
-              "RelativeToolTip": "RecommendationEngine.Communication\\SocketClient\\SocketMessenger.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T19:45:26.587Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SocketListener.cs",
-              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Communication\\SocketServer\\SocketListener.cs",
-              "RelativeDocumentMoniker": "RecommendationEngine.Communication\\SocketServer\\SocketListener.cs",
-              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Communication\\SocketServer\\SocketListener.cs",
-              "RelativeToolTip": "RecommendationEngine.Communication\\SocketServer\\SocketListener.cs",
-              "ViewState": "AQIAANEAAAAAAAAAAAAAAOMAAAA5AAAA",
+              "Title": "MealType.cs",
+              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\MealType.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.DataModel\\Models\\MealType.cs",
+              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\MealType.cs",
+              "RelativeToolTip": "RecommendationEngine.DataModel\\Models\\MealType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T12:34:26.142Z",
+              "WhenOpened": "2024-07-02T09:11:52.796Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IAdminService.cs",
-              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\Interfaces\\IAdminService.cs",
-              "RelativeDocumentMoniker": "RecomendationEngine.Services\\Interfaces\\IAdminService.cs",
-              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\Interfaces\\IAdminService.cs",
-              "RelativeToolTip": "RecomendationEngine.Services\\Interfaces\\IAdminService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
+              "DocumentIndex": 1,
+              "Title": "ChefService.cs",
+              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\Implementation\\ChefService.cs",
+              "RelativeDocumentMoniker": "RecomendationEngine.Services\\Implementation\\ChefService.cs",
+              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\Implementation\\ChefService.cs",
+              "RelativeToolTip": "RecomendationEngine.Services\\Implementation\\ChefService.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAjwCsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:22:43.375Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Item.cs",
-              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\Item.cs",
-              "RelativeDocumentMoniker": "RecommendationEngine.DataModel\\Models\\Item.cs",
-              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\Item.cs",
-              "RelativeToolTip": "RecommendationEngine.DataModel\\Models\\Item.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAABAAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:16:46.88Z",
+              "WhenOpened": "2024-06-25T18:47:21.648Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ServiceExtension.cs",
-              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\CafeteriaRecommendationEngine\\Extensions\\ServiceExtension.cs",
-              "RelativeDocumentMoniker": "CafeteriaRecommendationEngine\\Extensions\\ServiceExtension.cs",
-              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\CafeteriaRecommendationEngine\\Extensions\\ServiceExtension.cs",
-              "RelativeToolTip": "CafeteriaRecommendationEngine\\Extensions\\ServiceExtension.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAgAAAANAAAA",
+              "Title": "IChefService.cs",
+              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\Interfaces\\IChefService.cs",
+              "RelativeDocumentMoniker": "RecomendationEngine.Services\\Interfaces\\IChefService.cs",
+              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecomendationEngine.Services\\Interfaces\\IChefService.cs",
+              "RelativeToolTip": "RecomendationEngine.Services\\Interfaces\\IChefService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:30:10.258Z",
+              "WhenOpened": "2024-06-25T16:59:22.853Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\CafeteriaRecommendationEngine\\Program.cs",
-              "RelativeDocumentMoniker": "CafeteriaRecommendationEngine\\Program.cs",
-              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\CafeteriaRecommendationEngine\\Program.cs",
-              "RelativeToolTip": "CafeteriaRecommendationEngine\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "DocumentIndex": 2,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\Menu.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.DataModel\\Models\\Menu.cs",
+              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\Menu.cs",
+              "RelativeToolTip": "RecommendationEngine.DataModel\\Models\\Menu.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T05:39:27.798Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IItemRepository.cs",
-              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\Repositories\\Interfaces\\IItemRepository.cs",
-              "RelativeDocumentMoniker": "RecommendationEngine.DAL\\Repositories\\Interfaces\\IItemRepository.cs",
-              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\Repositories\\Interfaces\\IItemRepository.cs",
-              "RelativeToolTip": "RecommendationEngine.DAL\\Repositories\\Interfaces\\IItemRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T19:07:55.616Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\User.cs",
-              "RelativeDocumentMoniker": "RecommendationEngine.DataModel\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\User.cs",
-              "RelativeToolTip": "RecommendationEngine.DataModel\\Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAABBwB0AAABLAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T13:50:10.761Z",
+              "WhenOpened": "2024-06-27T06:49:33.466Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Role.cs",
-              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\Role.cs",
-              "RelativeDocumentMoniker": "RecommendationEngine.DataModel\\Models\\Role.cs",
-              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DataModel\\Models\\Role.cs",
-              "RelativeToolTip": "RecommendationEngine.DataModel\\Models\\Role.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Title": "MenuRepository.cs",
+              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\Repositories\\Implementation\\MenuRepository.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.DAL\\Repositories\\Implementation\\MenuRepository.cs",
+              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\Repositories\\Implementation\\MenuRepository.cs",
+              "RelativeToolTip": "RecommendationEngine.DAL\\Repositories\\Implementation\\MenuRepository.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAWwBUAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T12:47:19.949Z",
+              "WhenOpened": "2024-06-26T11:13:53.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IMenuRepository.cs",
+              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\Repositories\\Interfaces\\IMenuRepository.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.DAL\\Repositories\\Interfaces\\IMenuRepository.cs",
+              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.DAL\\Repositories\\Interfaces\\IMenuRepository.cs",
+              "RelativeToolTip": "RecommendationEngine.DAL\\Repositories\\Interfaces\\IMenuRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T17:46:12.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SocketMessenger.cs",
+              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Communication\\SocketClient\\SocketMessenger.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.Communication\\SocketClient\\SocketMessenger.cs",
+              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Communication\\SocketClient\\SocketMessenger.cs",
+              "RelativeToolTip": "RecommendationEngine.Communication\\SocketClient\\SocketMessenger.cs",
+              "ViewState": "AQIAAKYAAAAAAAAAAAAswLgAAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T18:17:42.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SocketListener.cs",
+              "DocumentMoniker": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Communication\\SocketServer\\SocketListener.cs",
+              "RelativeDocumentMoniker": "RecommendationEngine.Communication\\SocketServer\\SocketListener.cs",
+              "ToolTip": "C:\\Users\\roshni.mehta\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Desktop\\Gratuation_Project_2024\\CafeteriaRecommendationEngine\\RecommendationEngine.Communication\\SocketServer\\SocketListener.cs",
+              "RelativeToolTip": "RecommendationEngine.Communication\\SocketServer\\SocketListener.cs",
+              "ViewState": "AQIAAPEAAAAAAAAAAAAqwAEBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T12:34:26.142Z",
               "EditorCaption": ""
             }
           ]

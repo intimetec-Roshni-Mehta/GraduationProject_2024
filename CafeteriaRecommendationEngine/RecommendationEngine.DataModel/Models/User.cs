@@ -24,7 +24,6 @@ namespace RecommendationEngine.DataModel.Models
         public int RoleId { get; set; }
 
         public virtual Role Role { get; set; }
-        public virtual ICollection<Item> SelectedItems { get; set; }
         public virtual ICollection<Feedback> Feedback { get; set; }
         public virtual ICollection<VotedItem> VotedItem { get; set; }
         public virtual ICollection<Notification> Notification { get; set; }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ConsoleTableExt;
 using Microsoft.Extensions.DependencyInjection;
+using RecomendationEngine.Services.Implementation;
 using RecomendationEngine.Services.Interfaces;
 using RecommendationEngine.DataModel.Models;
 
@@ -17,6 +18,7 @@ namespace RecommendationEngine.Communication.SocketServer
         private static ConcurrentDictionary<string, (Socket, User)> activeSessions = new ConcurrentDictionary<string, (Socket, User)>();
         private static IAuthService authService;
         private static IAdminService adminService;
+        private static IChefService chefService;
 
         public static async Task StartServer(IServiceProvider services)
         {
@@ -80,6 +82,7 @@ namespace RecommendationEngine.Communication.SocketServer
         {
             authService = serviceProvider.GetRequiredService<IAuthService>();
             adminService = serviceProvider.GetRequiredService<IAdminService>();
+            chefService = serviceProvider.GetRequiredService<IChefService>();
         }
 
         private static async Task<string> ProcessData(string data, Socket handler)
@@ -135,7 +138,7 @@ namespace RecommendationEngine.Communication.SocketServer
                         case "admin":
                             return await HandleAdminCommands(command, parts);
                         case "chef":
-                            return await HandleChefCommands(command);
+                            return await HandleChefCommands(command, parts);
                         case "employee":
                             return await HandleEmployeeCommands(command);
                         default:
@@ -239,16 +242,46 @@ namespace RecommendationEngine.Communication.SocketServer
         }
 
 
-        private static async Task<string> HandleChefCommands(string command)
+        private static async Task<string> HandleChefCommands(string command, string[] parts)
         {
             switch (command)
             {
+                case "getItems":
+                    var itemsList = await GetItemsList();
+                    return itemsList;
+
                 case "1": // Rollout Menu
-                    return "Rollout Menu selected";
+                    if (parts.Length < 4)
+                    {
+                        return "Invalid command format for Rollout Menu. Expected: 1;username;date;itemId1,itemId2,...";
+                    }
+
+                    var date = parts[2];
+                    var itemIds = parts[3].Split(',').Select(int.Parse).ToList();
+                    var rolloutResult = await chefService.RolloutMenu(date, itemIds);
+                    return rolloutResult;
+
+                case "2": // Get Rolled Out Menu
+                    var rolledOutItems = await chefService.GetRolledOutMenu(DateTime.Now.AddDays(2).ToString("yyyy-MM-dd"));
+                    if (rolledOutItems == null || rolledOutItems.Count == 0)
+                    {
+                        return "No menu items found for tomorrow";
+                    }
+
+                    var itemDetails = rolledOutItems.Select(item =>
+                    {
+                        var mealTypeName = item.MealType?.MealTypeName ?? "Unknown";
+                        return $"ID: {item.ItemId}, Name: {item.ItemName}, Price: {item.Price}, Status: {item.AvailabilityStatus}, MealType: {mealTypeName}";
+                    }).Aggregate((current, next) => current + "\n" + next);
+
+                    return $"Rolled out menu for tomorrow:\n{itemDetails}";
+
                 default:
                     return "Unknown chef command";
             }
         }
+
+
 
         private static async Task<string> HandleEmployeeCommands(string command)
         {
@@ -261,6 +294,34 @@ namespace RecommendationEngine.Communication.SocketServer
                 default:
                     return "Unknown employee command";
             }
+        }
+
+        private static async Task<string> GetItemsList()
+        {
+            var items = await adminService.GetItems();
+            if (items == null || items.Count == 0)
+            {
+                return "No items found";
+            }
+
+            var filteredItems = items.ToList();
+
+            var tableData = filteredItems.Select(item => new
+            {
+                ID = item.ItemId,
+                Name = item.ItemName,
+                Price = item.Price,
+                Status = item.AvailabilityStatus,
+                MealTypeID = item.MealTypeId
+            }).ToList();
+
+            var tableString = ConsoleTableBuilder
+                .From(tableData)
+                .WithFormat(ConsoleTableBuilderFormat.MarkDown)
+                .Export()
+                .ToString();
+
+            return tableString;
         }
     }
 }

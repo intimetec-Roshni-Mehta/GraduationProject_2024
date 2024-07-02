@@ -24,13 +24,16 @@ namespace RecommendationEngine.Server.Extensions
             #region Services
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<IChefService, ChefService>();
             #endregion
 
             #region Repositories
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<IMenuRepository, MenuRepository>();
             services.AddScoped<IAdminRepository, AdminRepository>();
             #endregion
+
         }
     }
 }
