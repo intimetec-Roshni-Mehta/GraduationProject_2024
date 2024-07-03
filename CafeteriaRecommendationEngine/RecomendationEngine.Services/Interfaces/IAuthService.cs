@@ -10,7 +10,8 @@ namespace RecomendationEngine.Services.Interfaces
 {
     public interface IAuthService
     {
-        Task<User?> Authenticate(string username, string password);
-
+        Task<User> Authenticate(string username, string password);
+        Task<int?> GetUserIdByUsername(string username); // New method signature
     }
+
 }

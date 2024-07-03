@@ -11,7 +11,7 @@ namespace RecommendationEngine.Communication.SocketClient
         {
             try
             {
-                var remoteEP = new IPEndPoint(IPAddress.Parse("172.16.2.4"), 9999);
+                var remoteEP = new IPEndPoint(IPAddress.Parse("172.20.10.14"), 9999);
 
                 using (Socket sender = new Socket(remoteEP.AddressFamily, SocketType.Stream, ProtocolType.Tcp))
                 {
@@ -98,11 +98,11 @@ namespace RecommendationEngine.Communication.SocketClient
                     ProcessAdminOptions(sender, username);
                     break;
                 case "Login successful; Role: Chef":
-                    Console.WriteLine("Options:\n1. Rollout Menu\n2. Get RollOut Menu");
+                    Console.WriteLine("Options:\n1. Rollout Menu\n2. Get RollOut Menu\n");
                     ProcessChefOptions(sender, username);
                     break;
                 case "Login successful; Role: Employee":
-                    Console.WriteLine("Options:\n1. Give Feedback\n2. View Menu\n");
+                    Console.WriteLine("Options:\n1. Give Feedback\n2. View Menu\n3. Vote For Item\n");
                     ProcessEmployeeOptions(sender, username);
                     break;
                 default:
@@ -231,8 +231,6 @@ namespace RecommendationEngine.Communication.SocketClient
             return true;
         }
 
-
-
         private static void ProcessEmployeeOptions(Socket sender, string username)
         {
             bool loggedIn = true;
@@ -248,11 +246,29 @@ namespace RecommendationEngine.Communication.SocketClient
                 }
                 else
                 {
-                    SendMessage(sender, $"{option};{username};");
-                    ReceiveServerResponse(sender);
+                    if (option == "1")
+                    {
+                        Console.Write("Enter additional details separated by semicolon (itemId;rating;comment or itemId): ");
+                        var details = Console.ReadLine();
+                        SendMessage(sender, $"{option};{username};{details}");
+                    }
+                    else if (option == "3")
+                    {
+                        Console.Write("Enter item ID to vote: ");
+                        var itemId = Console.ReadLine();
+                        SendMessage(sender, $"{option};{username};{itemId}");
+                    }
+                    else
+                    {
+                        SendMessage(sender, $"{option};{username};");
+                    }
+
+                    var serverResponse = ReceiveServerResponse(sender);
+                    Console.WriteLine(serverResponse);
                 }
             }
         }
+
 
         private static string ReceiveServerResponse(Socket sender)
         {

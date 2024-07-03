@@ -184,6 +184,9 @@ namespace RecommendationEngine.Server.Migrations
                     b.Property<DateTime>("RecommendedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Voting")
+                        .HasColumnType("int");
+
                     b.HasKey("RecommendationId");
 
                     b.HasIndex("ItemId");

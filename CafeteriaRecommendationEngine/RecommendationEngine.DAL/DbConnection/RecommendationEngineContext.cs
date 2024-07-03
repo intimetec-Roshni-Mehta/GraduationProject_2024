@@ -21,6 +21,7 @@ namespace RecommendationEngine.DAL.DbConnection
         public DbSet<User> User { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<Notification> Notification { get; set; }
+        public DbSet<Recommendation> Recommendation { get; set; }
         public DbSet<MealType> MealType { get; set; }
         public DbSet<VotedItem> VotedItem { get; set; }
         public DbSet<Menu> Menu { get; set; }

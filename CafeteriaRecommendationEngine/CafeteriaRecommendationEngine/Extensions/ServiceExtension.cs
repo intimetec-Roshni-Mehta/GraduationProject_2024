@@ -25,6 +25,7 @@ namespace RecommendationEngine.Server.Extensions
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<IChefService, ChefService>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
             #endregion
 
             #region Repositories
@@ -32,6 +33,9 @@ namespace RecommendationEngine.Server.Extensions
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IMenuRepository, MenuRepository>();
             services.AddScoped<IAdminRepository, AdminRepository>();
+            services.AddScoped<IVotedItemRepository, VotedItemRepository>();
+            services.AddScoped<IRecommendationRepository, RecommendationRepository>();
+            services.AddScoped<IFeedbackRepository, FeedbackRepository>();
             #endregion
 
         }

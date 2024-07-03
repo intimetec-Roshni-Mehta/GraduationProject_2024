@@ -9,6 +9,7 @@ using ConsoleTableExt;
 using Microsoft.Extensions.DependencyInjection;
 using RecomendationEngine.Services.Implementation;
 using RecomendationEngine.Services.Interfaces;
+using RecommendationEngine.DAL.Repositories.Implementation;
 using RecommendationEngine.DataModel.Models;
 
 namespace RecommendationEngine.Communication.SocketServer
@@ -19,10 +20,11 @@ namespace RecommendationEngine.Communication.SocketServer
         private static IAuthService authService;
         private static IAdminService adminService;
         private static IChefService chefService;
+        private static IEmployeeService employeeService;
 
         public static async Task StartServer(IServiceProvider services)
         {
-            var ipAddress = IPAddress.Parse("172.16.2.4");
+            var ipAddress = IPAddress.Parse("172.20.10.14");
             var localEndPoint = new IPEndPoint(ipAddress, 9999);
 
             var listener = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
@@ -83,6 +85,7 @@ namespace RecommendationEngine.Communication.SocketServer
             authService = serviceProvider.GetRequiredService<IAuthService>();
             adminService = serviceProvider.GetRequiredService<IAdminService>();
             chefService = serviceProvider.GetRequiredService<IChefService>();
+            employeeService = serviceProvider.GetRequiredService<IEmployeeService>();
         }
 
         private static async Task<string> ProcessData(string data, Socket handler)
@@ -140,7 +143,7 @@ namespace RecommendationEngine.Communication.SocketServer
                         case "chef":
                             return await HandleChefCommands(command, parts);
                         case "employee":
-                            return await HandleEmployeeCommands(command);
+                            return await HandleEmployeeCommands(command, parts);
                         default:
                             return "Unknown role";
                     }
@@ -262,7 +265,7 @@ namespace RecommendationEngine.Communication.SocketServer
                     return rolloutResult;
 
                 case "2": // Get Rolled Out Menu
-                    var rolledOutItems = await chefService.GetRolledOutMenu(DateTime.Now.AddDays(2).ToString("yyyy-MM-dd"));
+                    var rolledOutItems = await chefService.GetRolledOutMenu(DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"));
                     if (rolledOutItems == null || rolledOutItems.Count == 0)
                     {
                         return "No menu items found for tomorrow";
@@ -281,16 +284,66 @@ namespace RecommendationEngine.Communication.SocketServer
             }
         }
 
-
-
-        private static async Task<string> HandleEmployeeCommands(string command)
+        private static async Task<string> HandleEmployeeCommands(string command, string[] parts)
         {
             switch (command)
             {
                 case "1": // Give Feedback
-                    return "Give Feedback selected";
+                    if (parts.Length < 5)
+                    {
+                        return "Invalid command format for Feedback. Expected: 1;username;itemId;rating;comment";
+                    }
+
+                    var username = parts[1];
+                    var itemId = int.Parse(parts[2]);
+                    var rating = int.Parse(parts[3]);
+                    var comment = parts[4];
+                    var userId = await authService.GetUserIdByUsername(username);
+                    if (userId == null)
+                    {
+                        return "User not found";
+                    }
+                    return await employeeService.GiveFeedback(userId.Value, itemId, rating, comment);
+
                 case "2": // View Menu
-                    return "View Menu selected";
+                    var rolledOutItems = await chefService.GetRolledOutMenu(DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"));
+                    if (rolledOutItems.Count == 0)
+                    {
+                        return "No menu items found for tomorrow";
+                    }
+
+                    var itemDetails = rolledOutItems.Select(item =>
+                    {
+                        var mealTypeName = item.MealType?.MealTypeName ?? "Unknown";
+                        return $"ID: {item.ItemId}, Name: {item.ItemName}, Price: {item.Price}, Status: {item.AvailabilityStatus}, MealType: {mealTypeName}, Votes: {item.Recommendations?.FirstOrDefault()?.Voting ?? 0}";
+                    }).Aggregate((current, next) => current + "\n" + next);
+
+                    return $"Rolled out menu for tomorrow:\n{itemDetails}";
+
+                case "3": // Vote for Item
+                    if (parts.Length < 3)
+                    {
+                        return "Invalid command format for Vote. Expected: 3;username;itemId";
+                    }
+
+                    var voteUsername = parts[1];
+                    var voteItemId = int.Parse(parts[2]);
+
+                    // Check if the item is in the rolled-out menu
+                    var rolledOutItemsForVote = await chefService.GetRolledOutMenu(DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"));
+                    var itemToVote = rolledOutItemsForVote.FirstOrDefault(item => item.ItemId == voteItemId);
+                    if (itemToVote == null)
+                    {
+                        return "Item not found in the rolled-out menu";
+                    }
+
+                    var voteUserId = await authService.GetUserIdByUsername(voteUsername);
+                    if (voteUserId == null)
+                    {
+                        return "User not found";
+                    }
+                    return await employeeService.VoteForItem(voteUserId.Value, voteItemId);
+
                 default:
                     return "Unknown employee command";
             }

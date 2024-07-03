@@ -60,6 +60,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "CodingUpAStorm.VaderSharp": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -158,6 +162,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "CodingUpAStorm.VaderSharp": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -235,6 +243,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "CodingUpAStorm.VaderSharp": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -341,6 +353,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "CodingUpAStorm.VaderSharp": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "ConsoleTableExt": {
               "target": "Package",
               "version": "[3.2.0, )"
@@ -416,6 +432,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "CodingUpAStorm.VaderSharp": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -511,6 +531,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "CodingUpAStorm.VaderSharp": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.0, )"

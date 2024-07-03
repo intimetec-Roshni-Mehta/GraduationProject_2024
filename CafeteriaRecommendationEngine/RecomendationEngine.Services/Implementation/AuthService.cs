@@ -11,18 +11,18 @@ namespace RecomendationEngine.Services.Implementation
 {
     public class AuthService : IAuthService
     {
-        private readonly IAuthRepository authRepository;
+        private readonly IAuthRepository _authRepository;
 
         public AuthService(IAuthRepository authRepository)
         {
-            this.authRepository = authRepository;
+            _authRepository = authRepository;
         }
 
         public async Task<User> Authenticate(string username, string password)
         {
             try
             {
-                var user = await authRepository.Authenticate(username);
+                var user = await _authRepository.Authenticate(username);
 
                 if (user == null)
                 {
@@ -38,20 +38,23 @@ namespace RecomendationEngine.Services.Implementation
             }
             catch (UserNotFoundException)
             {
-                // Handle user not found case if needed
                 throw;
             }
             catch (IncorrectPasswordException)
             {
-                // Handle incorrect password case if needed
                 throw;
             }
             catch (Exception ex)
             {
-                // Handle other potential exceptions
                 throw new Exception("An error occurred during authentication.", ex);
             }
         }
 
+        public async Task<int?> GetUserIdByUsername(string username)
+        {
+            var user = await _authRepository.Authenticate(username);
+            return user?.UserId;
+        }
     }
+
 }

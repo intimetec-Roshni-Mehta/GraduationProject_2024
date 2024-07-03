@@ -20,6 +20,8 @@ namespace RecommendationEngine.DataModel.Models
         [Required]
         public DateTime RecommendedDate { get; set; }
 
+        public int Voting {  get; set; }
+
         // Navigation properties
         public virtual Item Item { get; set; }
     }

@@ -10,5 +10,6 @@ namespace RecommendationEngine.DAL.Repositories.Interfaces
     public interface IAuthRepository
     {
         Task<User?> Authenticate(string username);
+        Task<int?> GetUserIdByUsername(string username); // New method signature
     }
 }
