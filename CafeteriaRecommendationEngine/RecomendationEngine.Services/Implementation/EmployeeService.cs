@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RecomendationEngine.Services.Interfaces;
+using RecommendationEngine.DAL.Repositories.Implementation;
 using RecommendationEngine.DAL.Repositories.Interfaces;
 using RecommendationEngine.DataModel.Models;
 using System;
@@ -18,14 +19,16 @@ namespace RecomendationEngine.Services.Implementation
         private readonly IFeedbackRepository _feedbackRepository;
         private readonly IAuthService _authService;
         private readonly IChefService _chefService;
+        private readonly IMenuRepository _menuRepository;
 
-        public EmployeeService(IVotedItemRepository votedItemRepository, IRecommendationRepository recommendationRepository, IFeedbackRepository feedbackRepository, IAuthService authService, IChefService chefService)
+        public EmployeeService(IVotedItemRepository votedItemRepository, IRecommendationRepository recommendationRepository, IFeedbackRepository feedbackRepository, IAuthService authService, IChefService chefService, IMenuRepository menuRepository)
         {
             _votedItemRepository = votedItemRepository;
             _recommendationRepository = recommendationRepository;
             _feedbackRepository = feedbackRepository;
             _authService = authService;
             _chefService = chefService;
+            _menuRepository = menuRepository;
         }
 
         public async Task<string> VoteForItem(int userId, int itemId)
@@ -62,8 +65,13 @@ namespace RecomendationEngine.Services.Implementation
                     RecommendedDate = today,
                     Voting = 1
                 };
+                await _recommendationRepository.AddOrUpdateAsync(recommendation);
             }
-            await _recommendationRepository.AddOrUpdateAsync(recommendation);
+
+            await _recommendationRepository.SaveChangesAsync();
+
+            // Ensure the item is in the rolled-out menu
+            await _menuRepository.AddMenuItemAsync(itemId, today.ToString("yyyy-MM-dd"));
 
             return "Vote recorded successfully.";
         }
@@ -102,7 +110,6 @@ namespace RecomendationEngine.Services.Implementation
 
             return $"Feedback recorded successfully. Sentiment: {sentiment}";
         }
-
 
         private string AnalyzeSentiment(string text)
         {

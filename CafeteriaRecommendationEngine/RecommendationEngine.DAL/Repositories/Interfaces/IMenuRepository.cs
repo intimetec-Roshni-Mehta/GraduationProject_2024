@@ -11,5 +11,7 @@ namespace RecommendationEngine.DAL.Repositories.Interfaces
     {
         Task AddAsync(Menu menu);
         Task<List<Menu>> GetByDateAsync(string date);
+        Task AddMenuItemAsync(int itemId, string date);
+        Task<List<Menu>> GetByDateWithItemsAndRecommendationsAsync(string date);
     }
 }

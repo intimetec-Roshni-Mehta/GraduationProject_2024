@@ -26,6 +26,7 @@ namespace RecommendationEngine.DataModel.Models
         [ForeignKey("MealType")]
         public int MealTypeId { get; set; }
 
+
         // Navigation properties
         public virtual MealType MealType { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }

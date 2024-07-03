@@ -24,8 +24,8 @@ namespace RecommendationEngine.Communication.SocketServer
 
         public static async Task StartServer(IServiceProvider services)
         {
-            var ipAddress = IPAddress.Parse("172.20.10.14");
-            var localEndPoint = new IPEndPoint(ipAddress, 9999);
+            var ipAddress = IPAddress.Parse("172.16.2.4");
+            var localEndPoint = new IPEndPoint(ipAddress, 1234);
 
             var listener = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
@@ -348,6 +348,7 @@ namespace RecommendationEngine.Communication.SocketServer
                     return "Unknown employee command";
             }
         }
+
 
         private static async Task<string> GetItemsList()
         {

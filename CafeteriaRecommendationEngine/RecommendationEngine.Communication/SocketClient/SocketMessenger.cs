@@ -11,7 +11,7 @@ namespace RecommendationEngine.Communication.SocketClient
         {
             try
             {
-                var remoteEP = new IPEndPoint(IPAddress.Parse("172.20.10.14"), 9999);
+                var remoteEP = new IPEndPoint(IPAddress.Parse("172.16.2.4"), 1234);
 
                 using (Socket sender = new Socket(remoteEP.AddressFamily, SocketType.Stream, ProtocolType.Tcp))
                 {
@@ -182,7 +182,7 @@ namespace RecommendationEngine.Communication.SocketClient
                     var itemsListResponse = ReceiveServerResponse(sender);
                     Console.WriteLine(itemsListResponse);
 
-                    Console.WriteLine("Rolling out menu for " + DateTime.Now.AddDays(2).ToString("yyyy-MM-dd"));
+                    Console.WriteLine("Rolling out menu for " + DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"));
                     string itemIdsInput = PromptUser("Enter item IDs separated by commas: ");
                     List<int> itemIds = new List<int>();
                     while (!TryParseItemIds(itemIdsInput, out itemIds))
@@ -191,7 +191,7 @@ namespace RecommendationEngine.Communication.SocketClient
                         itemIdsInput = PromptUser("Enter item IDs separated by commas: ");
                     }
 
-                    string formattedDate = DateTime.Now.AddDays(2).ToString("yyyy-MM-dd");
+                    string formattedDate = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
                     string formattedItemIds = string.Join(",", itemIds);
 
                     SendMessage(sender, $"{option};{username};{formattedDate};{formattedItemIds}");

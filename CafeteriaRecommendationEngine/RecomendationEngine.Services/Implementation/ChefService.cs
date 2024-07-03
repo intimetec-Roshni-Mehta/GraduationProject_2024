@@ -1,4 +1,5 @@
-﻿using RecomendationEngine.Services.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using RecomendationEngine.Services.Interfaces;
 using RecommendationEngine.DAL.Repositories.Interfaces;
 using RecommendationEngine.DataModel.Models;
 using System;
@@ -48,7 +49,7 @@ namespace RecomendationEngine.Services.Implementation
 
         public async Task<List<Item>> GetRolledOutMenu(string date)
         {
-            var menus = await _menuRepository.GetByDateAsync(date);
+            var menus = await _menuRepository.GetByDateWithItemsAndRecommendationsAsync(date);
             if (menus == null || menus.Count == 0)
             {
                 return new List<Item>();
@@ -56,5 +57,7 @@ namespace RecomendationEngine.Services.Implementation
 
             return menus.SelectMany(menu => menu.MenuItems.Select(mi => mi.Item)).ToList();
         }
+
     }
+
 }

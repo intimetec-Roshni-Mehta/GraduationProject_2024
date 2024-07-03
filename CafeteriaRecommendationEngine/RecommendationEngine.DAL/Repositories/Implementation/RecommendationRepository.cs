@@ -2,10 +2,6 @@
 using RecommendationEngine.DAL.DbConnection;
 using RecommendationEngine.DAL.Repositories.Interfaces;
 using RecommendationEngine.DataModel.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace RecommendationEngine.DAL.Repositories.Implementation
@@ -29,12 +25,17 @@ namespace RecommendationEngine.DAL.Repositories.Implementation
             var existingRecommendation = await _context.Recommendation.FirstOrDefaultAsync(r => r.ItemId == recommendation.ItemId);
             if (existingRecommendation != null)
             {
-                existingRecommendation.Voting = recommendation.Voting; 
+                existingRecommendation.Voting++;
             }
             else
             {
                 _context.Recommendation.Add(recommendation);
             }
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task SaveChangesAsync()
+        {
             await _context.SaveChangesAsync();
         }
     }

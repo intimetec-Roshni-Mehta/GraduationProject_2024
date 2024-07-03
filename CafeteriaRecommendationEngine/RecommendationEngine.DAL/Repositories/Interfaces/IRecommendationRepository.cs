@@ -11,5 +11,6 @@ namespace RecommendationEngine.DAL.Repositories.Interfaces
     {
         Task<Recommendation> GetRecommendationAsync(int itemId);
         Task AddOrUpdateAsync(Recommendation recommendation);
+        Task SaveChangesAsync();
     }
 }
